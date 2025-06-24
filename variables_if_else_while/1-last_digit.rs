@@ -7,7 +7,6 @@ use std::time::{SystemTime, UNIX_EPOCH};
 * less than 6 and not 0, or greater than 5.
 * Returns: Nothing
 */
-
 fn main() -> () {
     let seed = SystemTime::now()
         .duration_since(UNIX_EPOCH)
