@@ -5,7 +5,7 @@
 
 set -e  # Exit on error
 
-SRC_DIR="src"
+SRC_DIR="."
 OUTPUT_DIR="bin"
 mkdir -p "$OUTPUT_DIR"
 
