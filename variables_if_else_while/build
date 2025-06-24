@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Rust Source Builder
+# Usage: ./build.sh [filename1.rs] [filename2.rs]...
+
+set -e  # Exit on error
+
+SRC_DIR="."
+OUTPUT_DIR="bin"
+mkdir -p "$OUTPUT_DIR"
+
+build_file() {
+    local file="$1"
+    local name="${file%.rs}"
+    echo "🛠  Building $file..."
+    rustc "$SRC_DIR/$file" -o "$OUTPUT_DIR/$name" && \
+    echo "✅ Built: $OUTPUT_DIR/$name"
+}
+
+if [ $# -eq 0 ]; then
+    # Build all .rs files if no arguments given
+    echo "🔍 No files specified - building all .rs files"
+    for file in "$SRC_DIR"/*.rs; do
+        [ -f "$file" ] || continue  # Handle case with no .rs files
+        build_file "$(basename "$file")"
+    done
+else
+    # Build only specified files
+    for file in "$@"; do
+        if [ -f "$SRC_DIR/$file" ]; then
+            build_file "$file"
+        else
+            echo "❌ Error: File '$file' not found in $SRC_DIR/" >&2
+        fi
+    done
+fi
+
+echo "🚀 Build complete"
