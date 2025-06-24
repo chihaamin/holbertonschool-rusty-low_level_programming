@@ -11,9 +11,9 @@
 
 ##### The repository mirrors the structure of the original C projects, with directories corresponding to each C project/concept. Each directory contains:
 
-###### > Rust implementations of the C exercises
-###### > Any necessary additional Rust-specific documentation
-###### > Comparative notes between the C and Rust approaches
-###### > Each project will contain **build** script
-###### > Concept files are in the **/src**
-###### > All the files name are the same
+###### > Rust implementations of the C exercises.
+###### > Any necessary additional Rust-specific documentation.
+###### > Comparative notes between the C and Rust approaches.
+###### > Each project will contain **build** script.
+###### > Concept files are in the **/src**.
+###### > All the files names in the C project and the Rust project are the same.
