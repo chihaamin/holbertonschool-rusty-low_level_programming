@@ -14,13 +14,16 @@ fn putchar(c: char) -> () {
 
 /**
  * main - entry point of the program
- * This function prints the lowercase alphabet in reverse order from 'z' to 'a',
+ * This function prints the hexadecimal digits from 0 to 9 and 'a' to 'f',
  * using the putchar function to output each character,
  * followed by a newline character.
  * Returns () nothing aka "void" in C.
  */
 fn main() -> () {
-    for c in ('a'..='z').rev() {
+    for c in 0..=9 {
+        putchar(char::from_digit(c, 10).unwrap());
+    }
+    for c in 'a'..='f' {
         putchar(c);
     }
     putchar('\n');
