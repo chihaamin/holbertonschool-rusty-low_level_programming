@@ -14,5 +14,4 @@
 ###### > Rust implementations of the C exercises.
 ###### > Any necessary additional Rust-specific documentation.
 ###### > Each project will contain **build** script.
-###### > Concept files are in the **/src**.
 ###### > All the files names in the C project and the Rust project are the same.
